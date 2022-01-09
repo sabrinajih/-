@@ -59,10 +59,11 @@ Job Assignment
         * 如果曾經執行make指令然後失敗，在不確定問題的前提下建議直接將整個build資料夾刪掉然後重新cmake (略) 再重新make <br>
         * 如果執行 make -j4 (使用多核心) 然後卡再99% **好幾個小時** 建議還是ctrl+c 中斷後使用其他方法(例如make -j1 (單核心))來make <br>
         * 但半小時到一小時左右為正常時間<br>
-    * 雖然但是 **pip install opencv-python  不香嗎**
+    * 但是 **pip install opencv-python  不香嗎**
 * 攝影機顯示<br>
     * 解決方法：<br>
     根據[這個步驟](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[3]使用X11<br>
+    重要指令**export DISPLAY=localhost:10.0**
 
 * 不小心裝了多個版本的python<br>
     * 注意安裝的lib到底裝到哪個版本去了<br>
