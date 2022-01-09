@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan  9 17:02:40 2022
-
-@author: 季昭儀
-"""
+# open source by prajnasb
 
 import argparse
 import time
