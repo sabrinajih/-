@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan  9 17:02:40 2022
-
-@author: 季昭儀
-"""
-
 import argparse
 import time
 
@@ -16,6 +9,8 @@ from imutils.video import WebcamVideoStream
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
+from smbus2 import SMBus
+from mlx90614 import MLX90614
 
 # 初始化臉部偵測模型
 detector = mtcnn.MTCNN()
@@ -50,8 +45,13 @@ def detect_and_predict_mask(frame, mask_net):
 
     return (locs, preds)
 
-
 def main():
+
+    bus = SMBus(1)
+    time.sleep(1)
+    sensor = MLX90614(bus, address=0x5A)
+    img_save = "./save_img/"
+
     # 初始化Arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-m", "--model", default="mask_detector.model", help="path to the trained mask model")
@@ -82,11 +82,18 @@ def main():
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
 
+        if key == ord("p"):
+            print ("Temperature : ", sensor.get_object_1())
+            t = time.localtime(time.time())
+            img_name = time.strftime("%Y-%m-%d_%H-%M-%S",t)
+            cv2.imwrite(img_save + img_name + ".jpg", frame)
+
         if key == ord("q"):
             break
 
     cv2.destroyAllWindows()
     vs.stop()
+    bus.close()
 
 
 if __name__ == '__main__':
