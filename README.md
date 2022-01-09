@@ -74,5 +74,5 @@ References
   [2] [Installing OpenCV using CMake in Raspberry Pi](https://robu.in/installing-opencv-using-cmake-in-raspberry-pi/)<br>
   [3] [How to setup X11 forwarding in Putty using Xming](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)<br>
   
-  [树莓派4B通过Python读取MLX90614温度](https://blog.csdn.net/Hao_ge_666/article/details/117170782)<br>
+  [IoT Based Contactless Body Temperature Monitoring using Raspberry Pi with Camera and Email Alert](https://circuitdigest.com/microcontroller-projects/iot-based-contactless-body-temperature-monitoring-using-raspberry-pi-with-camera-and-email-alert)<br>
  
