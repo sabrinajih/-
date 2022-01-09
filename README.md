@@ -38,9 +38,10 @@ Knowledge from Lecture
 -----------
 Installation
 -----------
-Usage
+使用方法
 -----------
-Job Assignment
+
+分工表
 -----------
 
 遇到的問題
