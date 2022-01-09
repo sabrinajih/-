@@ -24,7 +24,7 @@ Keep-away-from-covid-19
 |         攝影機        |  1   |何宏歷|
 | MLX90614紅外測溫傳感器 |  1   |季昭儀|
 
-
+detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)
 
 
 
