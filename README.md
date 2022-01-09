@@ -24,7 +24,7 @@ Keep-away-from-covid-19
 |         攝影機        |  1   |何宏歷|
 | MLX90614紅外測溫傳感器 |  1   |季昭儀|
 
-detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)
+detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)[1]
 
 
 
@@ -55,13 +55,13 @@ Job Assignment
     * 解決：<br>
     可能問題1：版本衝突
     可能問題2：有其他需要的東西沒有先安裝好
-    最終使用[這個](https://robu.in/installing-opencv-using-cmake-in-raspberry-pi/)[1]安裝成功<br>
+    最終使用[這個](https://robu.in/installing-opencv-using-cmake-in-raspberry-pi/)[2]安裝成功<br>
     * 建議
         * 如果曾經執行make指令然後失敗，在不確定問題的前提下建議直接將整個build資料夾刪掉然後重新cmake (略) 再重新make <br>
         * 如果執行 make -j4 (使用多核心) 然後卡再99% **好幾個小時** 建議還是ctrl+c 中斷後使用其他方法(例如make -j1 (單核心))來make <br>
         * 但半小時到一小時左右為正常時間<br>
 * 攝影機顯示
-    * 根據[這個步驟](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[2]使用X11<br>
+    * 根據[這個步驟](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[3]使用X11<br>
 
 * 不小心裝了多個版本的python
     * 注意指令 python 跟 python3 不一樣
@@ -70,7 +70,9 @@ Job Assignment
 
 References
 -----------
-  [1] [Installing OpenCV using CMake in Raspberry Pi](https://robu.in/installing-opencv-using-cmake-in-raspberry-pi/)<br>
-  [2][How to setup X11 forwarding in Putty using Xming](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)<br>
+  [1] [[Day 27] 應用二：口罩下的人臉](https://ithelp.ithome.com.tw/articles/10278344)<br>
+  [2] [Installing OpenCV using CMake in Raspberry Pi](https://robu.in/installing-opencv-using-cmake-in-raspberry-pi/)<br>
+  [3] [How to setup X11 forwarding in Putty using Xming](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)<br>
+  
   [树莓派4B通过Python读取MLX90614温度](https://blog.csdn.net/Hao_ge_666/article/details/117170782)<br>
  
