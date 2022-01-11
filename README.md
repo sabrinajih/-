@@ -69,7 +69,10 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
     * 錯誤訊息：<br>
     E tensorflow/core/platform/hadoop/hadoop_file_system.cc:132] HadoopFileSystem load error: libhdfs.so: cannot open shared object file: No such file or directory<br>
     * 解決方法：<br>
-    [這裡](https://stackoverflow.com/questions/59505609/hadoopfilesystem-load-error-during-tensorflow-installation-on-raspberry-pi3)[4]
+    wget https://github.com/lhelontra/tensorflow-on-arm/releases/download/v2.0.0/tensorflow-2.0.0-cp37-none-linux_armv7l.whl<br>
+    python3 -m pip uninstall tensorflow<br>
+    python3 -m pip install tensorflow-2.0.0-cp37-none-linux_armv7l.whl<br>
+    [來源是這裡](https://stackoverflow.com/questions/59505609/hadoopfilesystem-load-error-during-tensorflow-installation-on-raspberry-pi3)[4]
 * hdf5 版本問題<br>
     * 錯誤訊息<br>
     File "/home/pi/.local/lib/python3.7/site-packages/tensorflow_core/python/keras/saving/hdf5_format.py", line 166, in load_model_from_hdf5<br>
