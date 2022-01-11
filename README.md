@@ -3,7 +3,7 @@ Keep-away-from-covid-19
 
 動機與目的
 -----------
-
+因為疫情又開始嚴峻起來，因此想要在自家門口裝設自動檢測體溫的裝置，來分辨是否有發燒的人員進入該場所。
 
 
 功能
@@ -32,12 +32,7 @@ tensorflow2.0.0<br>
 detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)[1]<br>
 
 
-Implementation Process
------------
-Knowledge from Lecture
------------
-Installation
------------
+
 使用方法
 -----------
 
