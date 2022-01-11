@@ -58,8 +58,22 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
     * 但是 **pip install opencv-python  不香嗎**
 * 攝影機顯示<br>
     * 解決方法：<br>
-    根據[這個步驟](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[3]使用X11<br>
-    重要指令**export DISPLAY=localhost:10.0**
+    How to setup X11 forwarding in Putty using Xming<br>
+    (1) Download and Install Putty on your PC<br>
+    (2) Download and Install Xming on your PC<br>
+    (3) Start Xming server<br>
+    (4) Save the server you want to connect to in Putty in saved sessions<br>
+    (5) Load the server you want to connect in putty<br>
+    (6) In the left category pane, click on connections then SSH and then X11.<br>
+    Check “Enable X11 forwarding” box<br>
+    Enter “localhost:0” in “X display location box”<br>
+    (7) In the left category pane go to top and select sessions<br>
+    (8) Press save button<br>
+    (9) Set following environment variable on the server<br>
+    export DISPLAY=localhost:10.0<br>
+    (10) Type xclock on the server and see if it appears<br>
+    (11) If you get following error then execute the resolution steps.<br>
+    [來源是這裡](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[3]使用X11<br>
 
 * 不小心裝了多個版本的python<br>
     * 注意安裝的lib到底裝到哪個版本去了<br>
