@@ -98,6 +98,9 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
     * 解決方法：<br>
     pip3 install h5py==2.10 -i https://pypi.doubanio.com/simple
 
+Demo
+-----------
+
 References
 -----------
   [1] [[Day 27] 應用二：口罩下的人臉](https://ithelp.ithome.com.tw/articles/10278344)<br>
