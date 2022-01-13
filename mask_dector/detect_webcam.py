@@ -1,5 +1,17 @@
+import os
+import imghdr
 import argparse
 import time
+import datetime
+import subprocess
+import smtplib
+import socket
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
+import datetime
+from email.message import EmailMessage
+from PIL import Image
 
 import cv2
 import imutils
@@ -86,7 +98,34 @@ def main():
             print ("Temperature : ", sensor.get_object_1())
             t = time.localtime(time.time())
             img_name = time.strftime("%Y-%m-%d_%H-%M-%S",t)
-            cv2.imwrite(img_save + img_name + ".jpg", frame)
+            cv2.imwrite("image.jpg", frame)
+
+            #send mail to let you know the information
+            to = 'horickho25@gmail.com'
+            gmail_user = 'rox873626@gmail.com'
+            gmail_password = 'Axlaxl123'
+            smtpserver = smtplib.SMTP('smtp.gmail.com', 587)
+            smtpserver.ehlo()
+            smtpserver.starttls()
+            smtpserver.login(gmail_user, gmail_password)
+            today = datetime.datetime.now()
+            temp = sensor.get_object_1()
+            my_temp = 'Temperature is %s' % temp
+            msg = EmailMessage()
+            msg['Subject'] = 'Epidemic privention breach detcted on %s' %today.strftime('%b %d %Y')
+            msg['From'] = gmail_user
+            msg['TO'] = to
+            msg.set_content(my_temp)
+
+            with open('image.jpg', 'rb') as f:
+                file_data = f.read()
+                file_type = imghdr.what(f.name)
+                file_name = f.name
+
+            msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
+
+            smtpserver.sendmail(gmail_user, [to], msg.as_string())
+            smtpserver.quit()
 
         if key == ord("q"):
             break
