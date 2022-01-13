@@ -37,10 +37,10 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 分工表
 -----------
-季昭儀 -  實作、報告<br>
-何宏歷 -  實作、報告<br>
-張光霖 -  實作<br>
-陳冠鈞 -  文件撰寫、報告<br>
+季昭儀 實作、報告<br>
+何宏歷 實作、報告<br>
+張光霖 實作<br>
+陳冠鈞 文件撰寫、報告<br>
 
 遇到的問題
 -----------
@@ -60,7 +60,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
         * 但半小時到一小時左右為正常時間<br>
     * 但是 **pip install opencv-python  不香嗎**
 * 攝影機顯示<br>
-    * 解決方法：<br>
+    * 解決方法：使用X11 <br>
     How to setup X11 forwarding in Putty using Xming<br>
     (1) Download and Install Putty on your PC<br>
     (2) Download and Install Xming on your PC<br>
@@ -76,12 +76,12 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
     export DISPLAY=localhost:10.0<br>
     (10) Type xclock on the server and see if it appears<br>
     (11) If you get following error then execute the resolution steps.<br>
-    [來源是這裡](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[3]使用X11<br>
+    [來源是這裡](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)[3]<br>
 
 * 不小心裝了多個版本的python<br>
     * 注意安裝的lib到底裝到哪個版本去了<br>
     * 解決方法：<br>
-    sudo 位置 -m pip install 要裝的東東(例：sudo /usr/bin/python2.7 -m pip install dlib)<br>
+    位置 -m pip install 要裝的東東(例： /usr/bin/python2.7 -m pip install dlib)<br>
 * tensorflow版本問題<br>
     * 錯誤訊息：<br>
     E tensorflow/core/platform/hadoop/hadoop_file_system.cc:132] HadoopFileSystem load error: libhdfs.so: cannot open shared object file: No such file or directory<br>
