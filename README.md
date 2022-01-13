@@ -100,7 +100,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 Demo
 -----------
-![]https://www.youtube.com/watch?v=PW2AmEfY65w
+![](https://www.youtube.com/watch?v=PW2AmEfY65w)
 
 References
 -----------
