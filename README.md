@@ -37,6 +37,10 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 分工表
 -----------
+季昭儀 實作、報告
+何宏歷 實作、報告
+張光霖 實作
+陳冠鈞 文件撰寫、報告
 
 遇到的問題
 -----------
