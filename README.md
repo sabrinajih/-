@@ -37,10 +37,10 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 分工表
 -----------
-季昭儀 實作、報告<br>
-何宏歷 實作、報告<br>
-張光霖 實作<br>
-陳冠鈞 文件撰寫、報告<br>
+季昭儀 -  實作、報告<br>
+何宏歷 -  實作、報告<br>
+張光霖 -  實作<br>
+陳冠鈞 -  文件撰寫、報告<br>
 
 遇到的問題
 -----------
@@ -81,7 +81,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 * 不小心裝了多個版本的python<br>
     * 注意安裝的lib到底裝到哪個版本去了<br>
     * 解決方法：<br>
-    位置 -m pip install 要裝的東東(例： /usr/bin/python2.7 -m pip install dlib)<br>
+    sudo 位置 -m pip install 要裝的東東(例：sudo /usr/bin/python2.7 -m pip install dlib)<br>
 * tensorflow版本問題<br>
     * 錯誤訊息：<br>
     E tensorflow/core/platform/hadoop/hadoop_file_system.cc:132] HadoopFileSystem load error: libhdfs.so: cannot open shared object file: No such file or directory<br>
