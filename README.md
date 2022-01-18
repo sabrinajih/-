@@ -49,7 +49,7 @@ cd ./Keep-away-from-covid-19/mask_dector<br>
 python3 detect_webcam.py <br>
 
 
-* Demo
+* Demo<br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PW2AmEfY65w/0.jpg)](https://www.youtube.com/watch?v=PW2AmEfY65w)
 
 課堂應用
