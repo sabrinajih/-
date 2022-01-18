@@ -54,8 +54,8 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
   ```
   sudo raspi-config
   ```
-  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Enabling-I2C-from-Raspberry.jpg
-  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Configuration-.jpg
+  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Enabling-I2C-from-Raspberry.jpg<br>
+  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Configuration-.jpg<br>
 
 * 下載感測器要用的庫
   ```
@@ -75,7 +75,7 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 * 接上MLX90614紅外測溫傳感器
   ![](https://circuitdigest.com/sites/default/files/circuitdiagram_mic/Raspberry-Pi-contactless-body-temperature-monitoring-with-MLX90614-Circuit-diagram.png)<br>
   輸入```i2cdetect -y 1```看看有沒有接成功，一切正常的話會像這個樣子
-  ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Output.jpg)
+  ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Output.jpg)<br>
   
 * 安裝mysql
   ```
