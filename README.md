@@ -23,6 +23,7 @@ Keep-away-from-covid-19
 |         攝影機        |  1   |何宏歷|
 | MLX90614紅外測溫傳感器 |  1   |季昭儀|
 
+* MLX90614紅外測溫傳感器的接法
 ![](https://circuitdigest.com/sites/default/files/circuitdiagram_mic/Raspberry-Pi-contactless-body-temperature-monitoring-with-MLX90614-Circuit-diagram.png)<br>
 電路圖來自[這裡](https://circuitdigest.com/microcontroller-projects/iot-based-contactless-body-temperature-monitoring-using-raspberry-pi-with-camera-and-email-alert)[5]<br>
 
