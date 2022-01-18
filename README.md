@@ -42,7 +42,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   * matplotlib<br>
 執行```train.py```
 
-* 然後在樹梅派上下載下來
+* 然後在樹梅派上下把東西載下來
 ```
 git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 ```
@@ -53,6 +53,35 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 * 攝影機直接使用usb接上
 ![](https://www.logitech.com/content/dam/logitech/en/products/webcams/c922/gallery/c922-gallery-1.png)<br>
 
+* 安裝mysql
+  ```
+  sudo apt-get install mariadb-serve
+  ```
+  登入
+  ```
+  sudo mysql -u root -p
+  ```
+  新增資料庫
+  ```
+  CREATE DATABASE `covid19`;
+  ```
+  設定新使用者與密碼
+  ```
+  CREATE USER 'lsa'@'localhost' IDENTIFIED BY 'lsa';
+  ```
+  設定使用者權限
+  ```
+  GRANT ALL PRIVILEGES ON covid19.* TO 'lsa'@'localhost';
+  ```
+  退出
+  ```
+  exit
+  ```
+  
+* 修改```detect_webcam.py```
+  * 讓它讀取感測到的溫度並記錄
+  * 讓它在指定情況下截圖與寄信
+  * 讓它將資料新增到資料庫
 
 使用方法
 -----------
