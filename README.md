@@ -28,8 +28,8 @@ Keep-away-from-covid-19
 
 python3.7.3<br>
 tensorflow2.0.0<br>
-detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)[1]<br>
-主程式參考[這個](https://ithelp.ithome.com.tw/articles/10278344)<br>[1]做修改，增加溫度辨識、截圖、寄信與新增資料到資料庫的功能<br>
+detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)<br>
+主程式參考[這個](https://ithelp.ithome.com.tw/articles/10278344)做修改，增加溫度辨識、截圖、寄信與新增資料到資料庫的功能<br>
 
 實作過程
 -----------
@@ -48,7 +48,7 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 ```
 
 * 攝影機直接使用usb接上
-![](https://www.logitech.com/content/dam/logitech/en/products/webcams/c922/gallery/c922-gallery-1.png)<br>
+  ![](https://www.logitech.com/content/dam/logitech/en/products/webcams/c922/gallery/c922-gallery-1.png)<br>
 
 * 設置啟用 I2C
   ```
