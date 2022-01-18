@@ -208,7 +208,11 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 -----------
 ```
 git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
+```
+```
 cd ./Keep-away-from-covid-19/mask_dector<br>
+```
+```
 python3 detect_webcam.py <br>
 ```
 
