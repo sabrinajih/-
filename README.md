@@ -34,6 +34,13 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 實作過程
 -----------
+* 主程式參考[這個](https://ithelp.ithome.com.tw/articles/10278344)<br>[1]做修改，增加溫度辨識、截圖、寄信與新增資料到資料庫的功能<br>
+* 先在電腦上使用tensorflow2.0.0訓練好model然後上傳到github<br>
+* 然後在樹梅派上
+```
+git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
+```
+
 
 使用方法
 -----------
