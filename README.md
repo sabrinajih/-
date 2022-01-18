@@ -34,9 +34,9 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 使用方法
 -----------
-git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git
-cd ./Keep-away-from-covid-19/mask_dector
-python3 detect_webcam.py 
+git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
+cd ./Keep-away-from-covid-19/mask_dector<br>
+python3 detect_webcam.py <br>
 
 
 分工表
