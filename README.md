@@ -214,6 +214,26 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   ```
   sudo apt install php-fpm
   ```
+  在使用phpadmin的時候出了點問題一直不能打開資料
+  參考[這個](https://www.linuxquestions.org/questions/linux-software-2/phpmyadmin-error-warnings-what-should-i-do-4175680433/)做了改動
+  ```
+  sudo vim +614  /usr/share/phpmyadmin/libraries/sql.lib.php
+  ```
+  ```
+  {
+    返回 $GLOBALS['cfg']['RememberSorting']
+        && ！($analyzed_sql_results['is_count']
+            || $analyzed_sql_results['is_export']
+            || $analyzed_sql_results['is_func']
+            || $analyzed_sql_results['is_analysis'])
+        && $analyzed_sql_results['select_from']
+        && ((空($analyzed_sql_results['select_expr']))
+            || (count($analyzed_sql_results['select_expr']) == 1) /**我改了這個*/            
+                                                          ^補上這個右括號
+                && ($analyzed_sql_results['select_expr'][0] == '*')) /** 這裡刪掉最後一個右括號 */
+        && count($analyzed_sql_results['select_tables']) == 1; 
+}
+  ```
 使用方法
 -----------
 ```
