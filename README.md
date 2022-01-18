@@ -32,7 +32,8 @@ python3.7.3<br>
 tensorflow2.0.0<br>
 detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/experiements/data)[1]<br>
 
-
+實作過程
+-----------
 
 使用方法
 -----------
@@ -43,6 +44,10 @@ python3 detect_webcam.py <br>
 
 * Demo
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PW2AmEfY65w/0.jpg)](https://www.youtube.com/watch?v=PW2AmEfY65w)
+
+課堂應用
+-----------
+
 
 分工表
 -----------
