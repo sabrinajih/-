@@ -232,7 +232,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
                                                           ^補上這個右括號
                 && ($analyzed_sql_results['select_expr'][0] == '*')) /** 這裡刪掉最後一個右括號 */
         && count($analyzed_sql_results['select_tables']) == 1; 
-}
+  }
   ```
 使用方法
 -----------
