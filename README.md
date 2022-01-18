@@ -41,6 +41,9 @@ cd ./Keep-away-from-covid-19/mask_dector<br>
 python3 detect_webcam.py <br>
 
 
+* Demo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PW2AmEfY65w/0.jpg)](https://www.youtube.com/watch?v=PW2AmEfY65w)
+
 分工表
 -----------
 季昭儀 實作、報告<br>
@@ -104,9 +107,7 @@ python3 detect_webcam.py <br>
     * 解決方法：<br>
     pip3 install h5py==2.10 -i https://pypi.doubanio.com/simple
 
-Demo
------------
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PW2AmEfY65w/0.jpg)](https://www.youtube.com/watch?v=PW2AmEfY65w)
+
 
 
 References
