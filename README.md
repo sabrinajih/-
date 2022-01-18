@@ -34,6 +34,8 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 使用方法
 -----------
+git clone
+
 
 分工表
 -----------
