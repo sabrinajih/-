@@ -41,11 +41,26 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   * imutils<br>
   * matplotlib<br>
 執行```train.py```
+* 在 Putty 中設置 X11 
+  * 下載並安裝 Putty
+  * 下載並安裝 Xming
+  * 啟動Xming服務器
+  * 在保存的會話中保存你要連接的服務器在Putty中
+  * 在putty中連到樹莓派
+  * 在左側類別窗格中，單擊連接，然後單擊 SSH，然後單擊 X11。
+  * 選中```Enable X11 forwarding```框
+  * 在```X display location box```中輸入```localhost:0```
+  * 左側轉到頂部並選擇sessions
+  * 按save按鈕
+  * 在樹莓派上輸入
+    ```export DISPLAY=localhost:10.0```
 
-* 然後在樹梅派上下把東西載下來
-```
-git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
-```
+<br><br>------------這是下面的事情都在樹莓派上做的分隔線------------<br><br>
+
+* 在樹莓派上下把東西載下來
+  ```
+  git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
+  ```
 
 * 攝影機直接使用usb接上
   ![](https://www.logitech.com/content/dam/logitech/en/products/webcams/c922/gallery/c922-gallery-1.png)<br>
