@@ -46,13 +46,37 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 ```
 git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 ```
-* 接上MLX90614紅外測溫傳感器
-![](https://circuitdigest.com/sites/default/files/circuitdiagram_mic/Raspberry-Pi-contactless-body-temperature-monitoring-with-MLX90614-Circuit-diagram.png)<br>
-電路圖來自[這裡](https://circuitdigest.com/microcontroller-projects/iot-based-contactless-body-temperature-monitoring-using-raspberry-pi-with-camera-and-email-alert)[5]<br>
 
 * 攝影機直接使用usb接上
 ![](https://www.logitech.com/content/dam/logitech/en/products/webcams/c922/gallery/c922-gallery-1.png)<br>
 
+* 設置啟用 I2C
+  ```
+  sudo raspi-config
+  ```
+  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Enabling-I2C-from-Raspberry.jpg
+  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Configuration-.jpg
+
+* 下載感測器要用的庫
+  ```
+  wget https://files.pythonhosted.org/packages/67/8a/443af31ff99cca1e30304dba28a60d3f07d247c8d410822411054e170c9c/PyMLX90614-0.0.3.tar.gz
+  ```
+  解壓縮
+  ```
+  tar -xf PyMLX90614-0.0.3.tar.gz
+  ```
+  下載其他東西跟安裝
+  ```
+  sudo apt-get install python-setuptools 
+  sudo apt-get install -y i2c-tools
+  sudo python3 setup.py install
+  ```
+
+* 接上MLX90614紅外測溫傳感器
+  ![](https://circuitdigest.com/sites/default/files/circuitdiagram_mic/Raspberry-Pi-contactless-body-temperature-monitoring-with-MLX90614-Circuit-diagram.png)<br>
+  輸入```i2cdetect -y 1```看看有沒有接成功，一切正常的話會像這個樣子
+  ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Output.jpg)
+  
 * 安裝mysql
   ```
   sudo apt-get install mariadb-serve
@@ -79,10 +103,28 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
   ```
   
 * 修改```detect_webcam.py```
-  * 讓它讀取感測到的溫度並記錄
+  * 讓它讀取感測到的溫度並記錄 
+    先引入需要的東西
+    ```
+    from smbus2 import SMBus
+    from mlx90614 import MLX90614
+    ```
+    ```
+    bus = SMBus(1)
+    time.sleep(1)
+    sensor = MLX90614(bus, address=0x5A)
+    ```
   * 讓它在指定情況下截圖與寄信
   * 讓它將資料新增到資料庫
 
+* 然後安裝php
+  ```
+  sudo apt install php-cli
+  ```
+  安裝fpm
+  ```
+  sudo apt install php-fpm
+  ```
 使用方法
 -----------
 git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
@@ -171,4 +213,5 @@ References
   [3] [How to setup X11 forwarding in Putty using Xming](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)<br>
   [4] [HadoopFileSystem load error during TensorFlow installation on raspberry pi3](https://stackoverflow.com/questions/59505609/hadoopfilesystem-load-error-during-tensorflow-installation-on-raspberry-pi3)<br>
   [5] [IoT Based Contactless Body Temperature Monitoring using Raspberry Pi with Camera and Email Alert](https://circuitdigest.com/microcontroller-projects/iot-based-contactless-body-temperature-monitoring-using-raspberry-pi-with-camera-and-email-alert)<br>
+  [6] [MySQL/MariaDB 新增資料庫、建立使用者帳號與資料表指令教學]https://blog.gtwang.org/linux/mysql-create-database-add-user-table-tutorial/
  
