@@ -196,10 +196,20 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
     smtpserver.sendmail(gmail_user, [to], msg.as_string())
     smtpserver.quit()
     ```
-* 然後安裝php
+* 然後安裝php的相關東西
   ```
-  sudo apt install php-cli
+  sudo apt install php -y
+  sudo apt install php-mysql -y
+  sudo apt install phpmyadmin -y
   ```
+  這裡選Apache2<br>
+  ![image](https://user-images.githubusercontent.com/74537568/149938917-d781e045-4d1d-4539-abb9-a1fabcb64daf.png)
+  Configuring phpmyadmin
+  ![image](https://user-images.githubusercontent.com/74537568/149939376-e2b631bb-36fd-4f07-9fcc-ef285e3bc346.png)
+  設密碼
+  ![image](https://user-images.githubusercontent.com/74537568/149939597-17c6a32c-20b5-466a-8896-f08ecfc9dd75.png)
+
+  
   安裝fpm
   ```
   sudo apt install php-fpm
