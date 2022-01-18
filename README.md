@@ -276,5 +276,5 @@ References
   [3] [How to setup X11 forwarding in Putty using Xming](https://tekyblog.wordpress.com/2012/02/02/how-to-setup-x11-forwarding-in-putty-using-xming/)<br>
   [4] [HadoopFileSystem load error during TensorFlow installation on raspberry pi3](https://stackoverflow.com/questions/59505609/hadoopfilesystem-load-error-during-tensorflow-installation-on-raspberry-pi3)<br>
   [5] [IoT Based Contactless Body Temperature Monitoring using Raspberry Pi with Camera and Email Alert](https://circuitdigest.com/microcontroller-projects/iot-based-contactless-body-temperature-monitoring-using-raspberry-pi-with-camera-and-email-alert)<br>
-  [6] [MySQL/MariaDB 新增資料庫、建立使用者帳號與資料表指令教學]https://blog.gtwang.org/linux/mysql-create-database-add-user-table-tutorial/
+  [6] [MySQL/MariaDB 新增資料庫、建立使用者帳號與資料表指令教學](https://blog.gtwang.org/linux/mysql-create-database-add-user-table-tutorial/)
  
