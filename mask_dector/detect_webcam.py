@@ -23,6 +23,9 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 from smbus2 import SMBus
 from mlx90614 import MLX90614
+import mysql.connector
+from mysql.connector import Error
+
 
 # 初始化臉部偵測模型
 detector = mtcnn.MTCNN()
@@ -95,13 +98,41 @@ def main():
         key = cv2.waitKey(1) & 0xFF
 
         if key == ord("p"):
-            print ("Temperature : ", sensor.get_object_1())
+            temp = sensor.get_object_1()
+            print ("Temperature : ", temp)
             t = time.localtime(time.time())
-            img_name = time.strftime("%Y-%m-%d_%H-%M-%S",t)
-            cv2.imwrite("image.jpg", frame)
+            img_file = "./save_img/"
+            img_name = time.strftime("%Y-%m-%d_%H-%M-%S",t)+".jpg"
+            cv2.imwrite(img_file+img_name, frame)
+
+            try:
+                connection = mysql.connector.connect(
+                        host='localhost',
+                        database='covid19',
+                        user='lsa',
+                        password='lsa')
+                ifmask = 0
+                if label == "Mask":
+                    ifmask = 1
+
+                sql = "INSERT INTO wearmask(time, temperature, ifmask, image, image_name) VALUES (%s, %s, %s, %s, %s)"
+                new_data = (time.strftime("%Y-%m-%d %H:%M:%S"), temp, ifmask, "image.jpg", img_name)
+                cursor = connection.cursor()
+                cursor.execute(sql, new_data)
+
+                connection.commit()
+
+            except Error as e:
+                print("connect SQL fail", e)
+
+            finally:
+                if (connection.is_connected()):
+                    cursor.close()
+                    connection.close()
+
 
             #send mail to let you know the information
-            to = 'horickho25@gmail.com'
+            to = 's110321515@mail1.ncnu.edu.tw'
             gmail_user = 'rox873626@gmail.com'
             gmail_password = 'Axlaxl123'
             smtpserver = smtplib.SMTP('smtp.gmail.com', 587)
@@ -109,7 +140,6 @@ def main():
             smtpserver.starttls()
             smtpserver.login(gmail_user, gmail_password)
             today = datetime.datetime.now()
-            temp = sensor.get_object_1()
             my_temp = 'Temperature is %s' % temp
             msg = EmailMessage()
             msg['Subject'] = 'Epidemic privention breach detcted on %s' %today.strftime('%b %d %Y')
@@ -117,10 +147,10 @@ def main():
             msg['TO'] = to
             msg.set_content(my_temp)
 
-            with open('image.jpg', 'rb') as f:
+            with open(img_file+img_name, 'rb') as f:
                 file_data = f.read()
                 file_type = imghdr.what(f.name)
-                file_name = f.name
+                file_name = img_name
 
             msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
 
@@ -137,3 +167,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
