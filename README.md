@@ -33,7 +33,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
 
 實作過程
 -----------
-從[這裡]https://github.com/prajnasb/observations/tree/master/experiements/data 下載detaset，解壓縮<br>
+從[這裡](https://github.com/prajnasb/observations/tree/master/experiements/data) 下載detaset，解壓縮<br>
 
 * 先在電腦上使用tensorflow2.0.0訓練好model然後上傳到github<br>
   確認python環境中安裝好<br>
