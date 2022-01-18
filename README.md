@@ -40,7 +40,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   * tensorflow2.0.0<br>
   * imutils<br>
   * matplotlib<br>
-
+執行```train.py```
 
 * 然後在樹梅派上下載下來
 ```
