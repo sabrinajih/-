@@ -203,11 +203,11 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   sudo apt install phpmyadmin -y
   ```
   這裡選Apache2<br>
-  ![image](https://user-images.githubusercontent.com/74537568/149938917-d781e045-4d1d-4539-abb9-a1fabcb64daf.png)
+  ![image](https://user-images.githubusercontent.com/74537568/149938917-d781e045-4d1d-4539-abb9-a1fabcb64daf.png)<br>
   Configuring phpmyadmin
-  ![image](https://user-images.githubusercontent.com/74537568/149939376-e2b631bb-36fd-4f07-9fcc-ef285e3bc346.png)
+  ![image](https://user-images.githubusercontent.com/74537568/149939376-e2b631bb-36fd-4f07-9fcc-ef285e3bc346.png)<br>
   設密碼
-  ![image](https://user-images.githubusercontent.com/74537568/149939597-17c6a32c-20b5-466a-8896-f08ecfc9dd75.png)
+  ![image](https://user-images.githubusercontent.com/74537568/149939597-17c6a32c-20b5-466a-8896-f08ecfc9dd75.png)<br>
 
   
   安裝fpm
