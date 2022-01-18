@@ -114,9 +114,72 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
     time.sleep(1)
     sensor = MLX90614(bus, address=0x5A)
     ```
-  * 讓它在指定情況下截圖與寄信
+    ```
+    if key == ord("p"):
+      temp = sensor.get_object_1()
+      print ("Temperature : ", temp)
+    ```
+  * 讓它在指定情況下截圖
+    ```
+     t = time.localtime(time.time()) 
+     img_file = "./save_img/"
+     img_name = time.strftime("%Y-%m-%d_%H-%M-%S",t)+".jpg" #檔名為截圖當下的時間
+     cv2.imwrite(img_file+img_name, frame) #存到save_img/底下
+    ```
   * 讓它將資料新增到資料庫
+    ```
+     try:
+        connection = mysql.connector.connect(
+                host='localhost',
+                database='covid19',
+                user='lsa',
+                password='lsa')
+        ifmask = 0
+        if label == "Mask":
+            ifmask = 1
 
+        sql = "INSERT INTO wearmask(time, temperature, ifmask, image, image_name) VALUES (%s, %s, %s, %s, %s)"
+        new_data = (time.strftime("%Y-%m-%d %H:%M:%S"), temp, ifmask, "image.jpg", img_name)
+        cursor = connection.cursor()
+        cursor.execute(sql, new_data)
+
+        connection.commit()
+
+    except Error as e:
+        print("connect SQL fail", e)
+
+    finally:
+        if (connection.is_connected()):
+            cursor.close()
+            connection.close()
+    ```
+  * 寄信
+    ```
+    to = 's110321515@mail1.ncnu.edu.tw'
+    gmail_user = 'rox873626@gmail.com'
+    gmail_password = 'Axlaxl123'
+    smtpserver = smtplib.SMTP('smtp.gmail.com', 587)
+    smtpserver.ehlo()
+    smtpserver.starttls()
+    smtpserver.login(gmail_user, gmail_password)
+    today = datetime.datetime.now()
+    my_temp = 'Temperature is %s' % temp
+    msg = EmailMessage()
+    msg['Subject'] = 'Epidemic privention breach detcted on %s' %today.strftime('%b %d %Y')
+    msg['From'] = gmail_user
+    msg['TO'] = to
+    msg.set_content(my_temp)
+
+    with open(img_file+img_name, 'rb') as f:
+        file_data = f.read()
+        file_type = imghdr.what(f.name)
+        file_name = img_name
+
+    msg.add_attachment(file_data, maintype='image', subtype=file_type, filename=file_name)
+
+    smtpserver.sendmail(gmail_user, [to], msg.as_string())
+    smtpserver.quit()
+    ```
 * 然後安裝php
   ```
   sudo apt install php-cli
