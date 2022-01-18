@@ -234,6 +234,10 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
         && count($analyzed_sql_results['select_tables']) == 1; 
   }
   ```
+  成功打開後長這樣
+  ![image](https://user-images.githubusercontent.com/74537568/149954687-06f06f8b-192d-4a28-b5a4-00a99f2b111f.png)
+
+  
 使用方法
 -----------
 ```
@@ -259,7 +263,7 @@ python3 detect_webcam.py <br>
 季昭儀 實作、報告<br>
 何宏歷 實作、報告<br>
 張光霖 實作<br>
-陳冠鈞 文件撰寫、報告<br>
+陳冠鈞 ppt撰寫、報告<br>
 
 遇到的問題
 -----------
