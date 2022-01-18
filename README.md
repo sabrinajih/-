@@ -235,7 +235,8 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   }
   ```
   成功打開後長這樣
-  ![image](https://user-images.githubusercontent.com/74537568/149954687-06f06f8b-192d-4a28-b5a4-00a99f2b111f.png)
+  ![image](https://user-images.githubusercontent.com/74537568/149954888-aaf9cca5-e5a7-4792-919d-dab5e87733e2.png)
+
 
   
 使用方法
