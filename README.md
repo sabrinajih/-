@@ -54,8 +54,8 @@ git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
   ```
   sudo raspi-config
   ```
-  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Enabling-I2C-from-Raspberry.jpg<br>
-  ![]https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Configuration-.jpg<br>
+  ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Enabling-I2C-from-Raspberry.jpg)<br>
+  ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Configuration-.jpg)<br>
 
 * 下載感測器要用的庫
   ```
