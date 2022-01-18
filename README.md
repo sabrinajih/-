@@ -48,8 +48,8 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   * 在保存的會話中保存你要連接的服務器在Putty中
   * 在putty中連到樹莓派
   * 在左側類別窗格中，單擊連接，然後單擊 SSH，然後單擊 X11。
-  * 選中```Enable X11 forwarding```框
-  * 在```X display location box```中輸入```localhost:0```
+    選中```Enable X11 forwarding```框
+    在```X display location box```中輸入```localhost:0```
     ![image](https://user-images.githubusercontent.com/74537568/149905950-16c17632-f164-4373-a730-2b0d89bc26c7.png)
   * 左側轉到頂部並選擇sessions
   * 按save按鈕
