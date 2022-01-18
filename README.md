@@ -206,10 +206,11 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   ```
 使用方法
 -----------
+```
 git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 cd ./Keep-away-from-covid-19/mask_dector<br>
 python3 detect_webcam.py <br>
-
+```
 
 * Demo<br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PW2AmEfY65w/0.jpg)](https://www.youtube.com/watch?v=PW2AmEfY65w)
