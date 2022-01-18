@@ -201,20 +201,17 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   sudo apt install php -y
   sudo apt install php-mysql -y
   sudo apt install phpmyadmin -y
+  sudo apt install php-fpm
   ```
   這裡選Apache2<br>
   ![image](https://user-images.githubusercontent.com/74537568/149938917-d781e045-4d1d-4539-abb9-a1fabcb64daf.png)<br>
-  Configuring phpmyadmin
+  Configuring phpmyadmin<br>
   ![image](https://user-images.githubusercontent.com/74537568/149939376-e2b631bb-36fd-4f07-9fcc-ef285e3bc346.png)<br>
-  設密碼
+  設密碼<br>
   ![image](https://user-images.githubusercontent.com/74537568/149939597-17c6a32c-20b5-466a-8896-f08ecfc9dd75.png)<br>
 
   
-  安裝fpm
-  ```
-  sudo apt install php-fpm
-  ```
-  在使用phpadmin的時候出了點問題一直不能打開資料
+  在使用phpadmin的時候出了點問題一直不能打開資料<br>
   參考[這個](https://www.linuxquestions.org/questions/linux-software-2/phpmyadmin-error-warnings-what-should-i-do-4175680433/)做了改動
   ```
   sudo vim +614  /usr/share/phpmyadmin/libraries/sql.lib.php
@@ -234,8 +231,8 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
         && count($analyzed_sql_results['select_tables']) == 1; 
   }
   ```
-  成功打開後長這樣
-  ![image](https://user-images.githubusercontent.com/74537568/149954888-aaf9cca5-e5a7-4792-919d-dab5e87733e2.png)
+  成功打開後長這樣<br>
+  ![image](https://user-images.githubusercontent.com/74537568/149954888-aaf9cca5-e5a7-4792-919d-dab5e87733e2.png)<br>
 
 
   
