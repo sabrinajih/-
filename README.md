@@ -94,8 +94,8 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   輸入```i2cdetect -y 1```看看有沒有接成功，一切正常的話會像這個樣子
   ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Output.jpg)<br>
 
-* 接上HC-SR04 超音波距離感測器
-  ![](https://blog.everlearn.tw/wp-content/uploads/2017/10/hc_sr04_bb.png)
+* 接上HC-SR04 超音波距離感測器<br>
+  ![image](https://user-images.githubusercontent.com/74537568/150137928-8782814d-27e9-44aa-8915-cbb64b196f49.png)
   
 * 安裝mysql
   ```
@@ -367,4 +367,5 @@ References
   [5] [IoT Based Contactless Body Temperature Monitoring using Raspberry Pi with Camera and Email Alert](https://circuitdigest.com/microcontroller-projects/iot-based-contactless-body-temperature-monitoring-using-raspberry-pi-with-camera-and-email-alert)<br>
   [6] [MySQL/MariaDB 新增資料庫、建立使用者帳號與資料表指令教學](https://blog.gtwang.org/linux/mysql-create-database-add-user-table-tutorial/)
   [7] [[SOLVED] phpmyadmin error warnings What should I do?](https://www.linuxquestions.org/questions/linux-software-2/phpmyadmin-error-warnings-what-should-i-do-4175680433/)
+  [8] RASPBERRY PI 3 MODEL B 與 HC-SR04 超音波感測器之應用(https://blog.everlearn.tw/%E7%95%B6-python-%E9%81%87%E4%B8%8A-raspberry-pi/raspberry-pi-3-model-b-%E8%88%87-hc-sr04-%E8%B6%85%E9%9F%B3%E6%B3%A2%E6%84%9F%E6%B8%AC%E5%99%A8%E4%B9%8B%E6%87%89%E7%94%A8)
  
