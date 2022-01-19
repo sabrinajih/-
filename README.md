@@ -22,6 +22,7 @@ Keep-away-from-covid-19
 |     Raspberry pi 3   |  1   | moli |
 |         攝影機        |  1   |何宏歷|
 | MLX90614紅外測溫傳感器 |  1   |季昭儀|
+|  HC-SR04 超音波感測器  |  1  | moli | 
 
 
 
@@ -73,7 +74,7 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Enabling-I2C-from-Raspberry.jpg)<br>
   ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Configuration-.jpg)<br>
 
-* 下載感測器要用的庫
+* 下載溫度感測器要用的庫
   ```
   wget https://files.pythonhosted.org/packages/67/8a/443af31ff99cca1e30304dba28a60d3f07d247c8d410822411054e170c9c/PyMLX90614-0.0.3.tar.gz
   ```
@@ -92,6 +93,9 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   ![](https://circuitdigest.com/sites/default/files/circuitdiagram_mic/Raspberry-Pi-contactless-body-temperature-monitoring-with-MLX90614-Circuit-diagram.png)<br>
   輸入```i2cdetect -y 1```看看有沒有接成功，一切正常的話會像這個樣子
   ![](https://circuitdigest.com/sites/default/files/inlineimages/u2/Raspberry-Pi-Output.jpg)<br>
+
+* 接上HC-SR04 超音波距離感測器
+  ![](https://blog.everlearn.tw/wp-content/uploads/2017/10/hc_sr04_bb.png)
   
 * 安裝mysql
   ```
@@ -135,7 +139,39 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
       temp = sensor.get_object_1()
       print ("Temperature : ", temp)
     ```
-  * 讓它在指定情況下截圖
+  * 感測距離
+    同樣先引入需要的東西
+    ```
+    import RPi.GPIO as GPIO
+    ```
+    腳位
+    ```
+    trigger_pin = 25
+    echo_pin = 8
+    ```
+    感測距離
+    ```
+    def send_trigger_pulse():
+      GPIO.output(trigger_pin, True)
+      time.sleep(0.001)
+      GPIO.output(trigger_pin, False)
+
+    def wait_for_echo(value, timeout):
+      count = timeout
+      while GPIO.input(echo_pin) != value and count > 0:
+      count = count - 1
+
+    def get_distance():
+      send_trigger_pulse()
+      wait_for_echo(True, 5000)
+      start = time.time()
+      wait_for_echo(False, 5000)
+      finish = time.time()
+      pulse_len = finish - start
+      distance_cm = pulse_len * 340 * 100 / 2
+      return(distance_cm)
+    ```
+  * 讓它在指定情況(設定為感測到距離小於4cm)下截圖
     ```
      t = time.localtime(time.time()) 
      img_file = "./save_img/"
