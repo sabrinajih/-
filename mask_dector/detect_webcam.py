@@ -25,11 +25,12 @@ from smbus2 import SMBus
 from mlx90614 import MLX90614
 import mysql.connector
 from mysql.connector import Error
-
+import RPi.GPIO as GPIO
 
 # 初始化臉部偵測模型
 detector = mtcnn.MTCNN()
-
+trigger_pin = 25
+echo_pin = 8
 
 # 辨識人臉與偵測是否有戴口罩
 def detect_and_predict_mask(frame, mask_net):
@@ -60,12 +61,41 @@ def detect_and_predict_mask(frame, mask_net):
 
     return (locs, preds)
 
+def send_trigger_pulse():
+    GPIO.output(trigger_pin, True)
+    time.sleep(0.001)
+    GPIO.output(trigger_pin, False)
+
+def wait_for_echo(value, timeout):
+    count = timeout
+    while GPIO.input(echo_pin) != value and count > 0:
+        count = count - 1
+
+def get_distance():
+    send_trigger_pulse()
+    wait_for_echo(True, 5000)
+    start = time.time()
+    wait_for_echo(False, 5000)
+    finish = time.time()
+    pulse_len = finish - start
+    distance_cm = pulse_len * 340 * 100 / 2
+    return(distance_cm)
+
+
+
 def main():
 
     bus = SMBus(1)
     time.sleep(1)
     sensor = MLX90614(bus, address=0x5A)
     img_save = "./save_img/"
+    ifmask = 2
+    take_picture = 0
+    already_take_picture = 0
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(trigger_pin, GPIO.OUT)
+    GPIO.setup(echo_pin, GPIO.IN)
 
     # 初始化Arguments
     ap = argparse.ArgumentParser()
@@ -91,13 +121,30 @@ def main():
             (label, color) = ("Mask", (0, 255, 0)) if mask > withoutMask else ("No Mask", (0, 0, 255))
             label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
 
+            if mask > withoutMask:
+                    ifmask = 1
+            else:
+                ifmask = 0
+
             cv2.putText(frame, label, (startX, startY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
             cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
 
         cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
 
-        if key == ord("p"):
+        #if key == ord("p"):
+        D = get_distance()
+        print("D = ",D)
+        if(D < 4):
+            take_picture = 1
+            print("take_picture, already_take_picture", take_picture, already_take_picture)
+        else :
+            take_picture = 0
+            already_take_picture = 0
+            print("take_picture, already_take_picture", take_picture, already_take_picture)
+        if(already_take_picture == 0 and take_picture):
+            already_take_picture = 1
+            print("take_picture, already_take_picture", take_picture, already_take_picture)
             temp = sensor.get_object_1()
             print ("Temperature : ", temp)
             t = time.localtime(time.time())
@@ -111,9 +158,6 @@ def main():
                         database='covid19',
                         user='lsa',
                         password='lsa')
-                ifmask = 0
-                if label == "Mask":
-                    ifmask = 1
 
                 sql = "INSERT INTO wearmask(time, temperature, ifmask, image, image_name) VALUES (%s, %s, %s, %s, %s)"
                 new_data = (time.strftime("%Y-%m-%d %H:%M:%S"), temp, ifmask, "image.jpg", img_name)
@@ -163,8 +207,7 @@ def main():
     cv2.destroyAllWindows()
     vs.stop()
     bus.close()
-
+    GPIO.cleanup()
 
 if __name__ == '__main__':
     main()
-
