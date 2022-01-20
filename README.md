@@ -275,15 +275,19 @@ detaset 來自 [prajnasb](https://github.com/prajnasb/observations/tree/master/e
   
 使用方法
 -----------
+先下載我們的檔案
 ```
 git clone https://github.com/sabrinajih/Keep-away-from-covid-19.git<br>
 ```
 ```
 cd ./Keep-away-from-covid-19/mask_dector<br>
 ```
+執行
 ```
 python3 detect_webcam.py <br>
 ```
+然後攝影機就會開始運作，同時程式會開始判定畫面中的人有沒有戴口罩
+當超音波感測器感測到距離``` < 4cm```時就會自動拍照並上傳資料庫
 
 * Demo<br>
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/PW2AmEfY65w/0.jpg)](https://www.youtube.com/watch?v=PW2AmEfY65w)
